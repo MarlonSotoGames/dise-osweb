@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Impulsa Redes CR · Publicaciones listas para tu negocio</title>
+  <meta name="description" content="Diseños llamativos + textos que atraen clientes. Planes accesibles para restaurantes, sodas, salones de belleza y barberías en Costa Rica (se adapta a cualquier negocio)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --card: rgba(255,255,255,0.06);
+      --muted: #a8b3c2;
+      --text: #f3f7ff;
+      --brand: #59f9a8; /* menta */
+      --brand-2: #6aa7ff; /* azul suave */
+      --accent: #ffd166; /* amarillo cálido */
+      --danger: #ff6b6b;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:
+      radial-gradient(1200px 800px at 10% -10%, rgba(89,249,168,.18), transparent 40%),
+      radial-gradient(1000px 700px at 90% 0%, rgba(106,167,255,.14), transparent 45%),
+      var(--bg);
+      color:var(--text);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1120px, 92vw);margin-inline:auto}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.6);backdrop-filter: blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .brand .logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;box-shadow:var(--shadow)}
+    .brand .logo svg{filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+    .nav a.btn{padding:10px 16px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));font-weight:700;box-shadow:var(--shadow)}
+
+    /* Hero */
+    .hero{padding:64px 0 40px 0}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .hero h1{font-family:"Plus Jakarta Sans", Inter, sans-serif;font-size:clamp(28px, 4.2vw, 56px);line-height:1.05;margin:0 0 14px}
+    .hero p{color:var(--muted);font-size:clamp(15px, 1.8vw, 18px);margin:0 0 24px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-primary{padding:14px 18px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--brand-2));font-weight:800;box-shadow:var(--shadow)}
+    .btn-ghost{padding:14px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.12);font-weight:700;background:rgba(255,255,255,.02)}
+
+    .mock{background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+    .mock .frame{aspect-ratio:9/16;border-radius:14px;background:radial-gradient(120% 90% at 50% 0%, rgba(255,209,102,.25), transparent 70%), url('') center/cover, #111;border:1px solid rgba(255,255,255,.1)}
+
+    /* Section titles */
+    .section{padding:34px 0 18px}
+    .section h2{font-size:clamp(22px, 3.2vw, 36px);margin:0 0 8px}
+    .section p.lead{color:var(--muted);margin:0 0 20px}
+
+    /* Plans */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px}
+    .badge{display:inline-flex;align-items:center;gap:8px;font-weight:700;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1)}
+    .price{font-weight:800;font-size:28px}
+    .muted{color:var(--muted)}
+    .features{display:grid;gap:8px;margin:6px 0 8px}
+    .features li{list-style:none;display:flex;gap:8px;align-items:flex-start}
+    .features svg{flex:0 0 18px;margin-top:3px}
+    .card .cta{margin-top:auto}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .shot{background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+    .shot .cap{padding:12px;color:var(--muted);font-size:14px}
+
+    /* CTA block */
+    .cta-block{margin:24px 0;background:linear-gradient(135deg, rgba(89,249,168,.14), rgba(106,167,255,.14));border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+
+    /* Footer */
+    footer{padding:40px 0;color:var(--muted)}
+
+    /* Floating WhatsApp */
+    .whatsapp{
+      position:fixed;right:18px;bottom:18px;z-index:60;width:56px;height:56px;border-radius:18px;
+      background:linear-gradient(135deg,#25D366,#2ee58c);display:grid;place-items:center;box-shadow:var(--shadow);
+    }
+
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 12C4 7.582 7.582 4 12 4s8 3.582 8 8-3.582 8-8 8" stroke="#081017" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6 12a6 6 0 1 0 12 0" stroke="#081017" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span>Impulsa Redes CR</span>
+      </div>
+      <a class="btn" href="#packs">Ver planes</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Publicaciones profesionales para que tu negocio se vea activo y venda más</h1>
+          <p>Diseños llamativos + textos que atraen clientes para <strong>restaurantes, sodas, salones de belleza y barberías</strong> <em>(se adapta a cualquier otro negocio)</em>. Planes accesibles y entrega semanal.</p>
+          <div class="cta-row">
+            <a class="btn-primary" href="https://wa.me/50689028220?text=Hola%20%F0%9F%91%8B%2C%20me%20interesan%20los%20planes%20de%20publicaciones%20para%20mi%20negocio">Quiero info por WhatsApp</a>
+            <a class="btn-ghost" href="#ejemplos">Ver ejemplos</a>
+          </div>
+        </div>
+        <div class="mock">
+          <div class="frame" title="Previsualización de historia / post">
+            <!-- Puedes reemplazar el fondo con un screenshot de tus ejemplos -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="packs" class="section">
+      <div class="container">
+        <h2>Planes simples, resultados claros</h2>
+        <p class="lead">Elige el nivel de presencia que querés. Todos los posts incluyen imagen llamativa y copy diseñado para captar clientes, en cualquier sector.</p>
+        <div class="cards">
+          <!-- Esencial -->
+          <article class="card">
+            <span class="badge">Pack Esencial</span>
+            <div class="price">₡15.000 / mes</div>
+            <p class="muted">8 publicaciones al mes (2 por semana).</p>
+            <ul class="features">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Imagen atractiva + texto optimizado para captar clientes.
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Presencia llamativa en redes sociales.
+              </li>
+            </ul>
+            <div class="cta">
+              <p class="muted">Publicamos en tu página por ti: <strong>+₡5.000</strong></p>
+              <a class="btn-primary" href="https://wa.me/50689028220?text=Hola%2C%20quiero%20el%20Pack%20Esencial%20%28₡15.000%29">Elegir Esencial</a>
+            </div>
+          </article>
+
+          <!-- Avanzado -->
+          <article class="card">
+            <span class="badge">Pack Avanzado</span>
+            <div class="price">₡25.000 / mes</div>
+            <p class="muted">12 publicaciones al mes (3 por semana).</p>
+            <ul class="features">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Imagen atractiva + texto optimizado para captar clientes.
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Presencia activa en redes sociales.
+              </li>
+            </ul>
+            <div class="cta">
+              <p class="muted">Publicamos en tu página por ti: <strong>+₡8.000</strong></p>
+              <a class="btn-primary" href="https://wa.me/50689028220?text=Hola%2C%20quiero%20el%20Pack%20Avanzado%20%28₡25.000%29">Elegir Avanzado</a>
+            </div>
+          </article>
+
+          <!-- Premium -->
+          <article class="card">
+            <span class="badge">Pack Premium</span>
+            <div class="price">₡30.000 / mes</div>
+            <p class="muted">20 publicaciones al mes (5 por semana).</p>
+            <ul class="features">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Imagen atractiva + texto optimizado para captar clientes.
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Presencia constante en redes sociales.
+              </li>
+            </ul>
+            <div class="cta">
+              <p class="muted">Publicamos en tu página por ti: <strong>+₡10.000</strong></p>
+              <a class="btn-primary" href="https://wa.me/50689028220?text=Hola%2C%20quiero%20el%20Pack%20Premium%20%28₡30.000%29">Elegir Premium</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejemplos" class="section">
+      <div class="container">
+        <h2>Así se verán tus publicaciones</h2>
+        <p class="lead">Algunos estilos para restaurantes/sodas, barberías y salones. Podemos adaptar el diseño a cualquier negocio.</p>
+        <p class="muted">Imágenes de personas y comida hechas con IA para ejemplo ficticio.</p>
+
+        <div class="gallery">
+          <figure class="shot">
+            <img src="assets web diseños\cliente ficticio 1.png" alt="Historia restaurante: Casado + fresco ₡3.200"/>
+            <figcaption class="cap">
+              <strong>Soda La Esquina – San José centro</strong>
+              <details><summary>Ver copy usado</summary>
+                <p>✨ ¿Almuerzo rápido y delicioso en San José centro?<br>
+                En Soda La Esquina te tenemos el casado perfecto 🍛<br><br>
+                🥩 Casado de carne o 🍗 casado de pollo<br>
+                🥤 Incluye refresco natural<br>
+                💰 ¡Todo por solo ₡3.200!<br><br>
+                Ideal para oficinistas y estudiantes que quieren comer bien sin gastar de más.<br>
+                ⚡ Servicio rápido → en minutos estás disfrutando tu comida.<br><br>
+                📍 Estamos en el corazón de San José centro.<br>
+                👉 Vení hoy mismo y probá el sabor casero que te recarga el día.</p>
+              </details>
+            </figcaption>
+          </figure>
+
+          <figure class="shot">
+            <img src="assets web diseños\cliente ficticio 2.png" alt="Historia barbería: Corte + Barba ₡6.000"/>
+            <figcaption class="cap">
+              <strong>Barbería El Corte Fino – Heredia centro</strong>
+              <details><summary>Ver copy usado</summary>
+                <p>💈 ¿Un look fresco y con estilo?<br>
+                En "El Corte Fino" lo tenemos:<br><br>
+                ✂️ Corte moderno + arreglo de barba<br>
+                💰 Todo por solo ₡6.000<br>
+                🔥 Fades, diseños y afeitado con toalla caliente.<br><br>
+                Ambiente urbano, música, servicio rápido y calidad garantizada.<br>
+                📍 Estamos en Heredia centro.<br><br>
+                👉 Reservá tu espacio y salí con el estilo que merecés.</p>
+              </details>
+            </figcaption>
+          </figure>
+
+          <figure class="shot">
+            <img src="assets web diseños\cliente ficticio 3.png"" alt="Historia salón: Manicure + Pedicure ₡12.000"/>
+            <figcaption class="cap">
+              <strong>Salón Belleza Glamour – Alajuela</strong>
+              <details><summary>Ver copy usado</summary>
+                <p>💅 Renová tu estilo y cuidá tus manos y pies<br>
+                En Salón Glamour tenemos la promo ideal:<br><br>
+                ✨ Manicure + Pedicure<br>
+                💰 ¡Por solo ₡12.000!<br><br>
+                Usamos productos profesionales y te damos la atención personalizada que merecés.<br>
+                📍 Estamos en Alajuela.<br><br>
+                👉 Reservá tu cita y regalate un momento solo para vos.</p>
+              </details>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <article class="card">
+          <span class="badge">Extra · Publicación directa</span>
+          <p>Nos encargamos de programar y publicar en tu página para que no tengas que preocuparte.</p>
+          <p class="muted">Costo adicional según plan: <strong>+₡5.000 / +₡8.000 / +₡10.000</strong></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container cta-block">
+        <div>
+          <h3 style="margin:0 0 6px">¿Listo para que tus redes se vean profesionales?</h3>
+          <p style="margin:0" class="muted">Respondemos rápido por WhatsApp. También podés escribir a <a href="mailto:mm.soto.molina@gmail.com">mm.soto.molina@gmail.com</a>.</p>
+        </div>
+        <a class="btn-primary" href="https://wa.me/50689028220?text=Hola%2C%20quiero%20cotizar%20publicaciones%20para%20mi%20negocio">Escribir por WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> Impulsa Redes CR · Hecho en Costa Rica 🇨🇷</div>
+      <div class="muted">WhatsApp: +506 8902 8220 · Email: <a href="mailto:mm.soto.molina@gmail.com">mm.soto.molina@gmail.com</a></div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" aria-label="WhatsApp" href="https://wa.me/50689028220?text=Hola%2C%20me%20interesan%20los%20planes%20de%20publicaciones%20para%20mi%20negocio">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="#081017" xmlns="http://www.w3.org/2000/svg"><path d="M19.11 17.53c-.31-.16-1.83-.9-2.12-1.01-.29-.11-.5-.16-.71.16-.21.31-.81 1.01-.99 1.22-.18.21-.36.24-.67.08-.31-.16-1.3-.48-2.47-1.53-.91-.81-1.52-1.81-1.7-2.12-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.71-.98-2.33-.26-.62-.52-.54-.71-.55-.18-.01-.39-.01-.6-.01-.21 0-.55.08-.84.39-.29.31-1.1 1.08-1.1 2.63 0 1.55 1.13 3.05 1.29 3.26.16.21 2.22 3.39 5.38 4.75.75.32 1.34.51 1.8.65.76.24 1.45.21 2 .13.61-.09 1.83-.75 2.09-1.47.26-.72.26-1.34.18-1.47-.08-.13-.29-.21-.6-.37z"/><path d="M26.52 5.47A13.4 13.4 0 0 0 16 1.33C8.65 1.33 2.67 7.3 2.67 14.66c0 2.31.6 4.56 1.75 6.55L2 30.67l9.67-2.36a13.32 13.32 0 0 0 4.33.71c7.35 0 13.33-5.97 13.33-13.33 0-3.56-1.39-6.91-3.81-9.22z"/></svg>
+  </a>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
